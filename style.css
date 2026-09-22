@@ -2153,3 +2153,202 @@ body {
 .spinner {
   animation: spin 0.8s linear infinite;
 }
+
+/* ==========================================================================
+   Mobile-Only Responsive Refinements (Navbar & Getting Started / Steps)
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  /* Container mobile padding */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Getting Started (Steps) Section - Mobile Optimization */
+  .steps-section {
+    padding: 60px 0 80px 0;
+    overflow: hidden;
+  }
+
+  .steps-layout {
+    gap: 32px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .steps-sticky-side {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .steps-eyebrow {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .steps-headline {
+    font-size: 28px;
+    line-height: 1.18;
+  }
+
+  .steps-timeline-side {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .steps-list {
+    width: 100%;
+    min-width: 0;
+    gap: 20px;
+  }
+
+  .step-item {
+    gap: 12px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .step-number-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .step-card {
+    flex: 1;
+    min-width: 0; /* Prevents flexbox content blowout */
+    max-width: calc(100% - 44px);
+    padding: 18px 14px;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+
+  .step-preview-box {
+    padding: 14px 12px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0; /* Allows inner preview to shrink to viewport */
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .step-preview-label {
+    font-size: 12px;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
+  .step-scholars-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+
+  .step-email-input-bar {
+    height: 32px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .step-btn-next {
+    padding: 5px 14px;
+    font-size: 11px;
+  }
+
+  .step-scholars-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+  }
+
+  .step-scholar-avatar-item {
+    flex-shrink: 0;
+  }
+
+  .step-scholar-avatar-item img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .step-scholar-avatar-item span {
+    font-size: 9px;
+  }
+
+  .step-player-controls-row {
+    gap: 12px;
+  }
+
+  .step-ctrl-play {
+    width: 32px;
+    height: 32px;
+  }
+
+  .step-title {
+    font-size: 18px;
+  }
+
+  .step-description {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Sticky Navbar - Mobile Overflow Fix */
+  .sticky-header {
+    padding: 10px 0;
+  }
+
+  .sticky-header .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .sticky-header-content {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .sticky-nav-left {
+    gap: 8px;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .sticky-nav-left .logo {
+    flex-shrink: 0;
+  }
+
+  .sticky-nav-left .logo-svg--default {
+    height: 24px;
+    width: auto;
+    max-width: 105px;
+  }
+
+  /* Hide the Coming Soon pill in sticky nav on mobile so Logo + Join button fit without clipping */
+  .sticky-nav-left .badge-tag {
+    display: none;
+  }
+
+  .btn-nav-waitlist {
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
