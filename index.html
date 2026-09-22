@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamafy - Islamic Audio for Everyone | Coming Soon</title>
+  <meta name="description" content="Islamic audio in one focused place. Discover, follow, save, and listen to lectures, series, and beneficial reminders from verified scholars without distractions.">
+  
+  <!-- Favicon / Brand SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 45'%3E%3Cpath d='M22.57 0C10.1 0 0 10.07 0 22.5C0 34.93 10.1 45 22.57 45C35.04 45 45.14 34.93 45.14 22.5C45.14 10.07 35.04 0 22.57 0ZM31.79 32.94C25.6 36.98 17.29 35.23 13.25 29.06C9.2 22.89 10.95 14.61 17.15 10.58C18.71 9.55 20.42 8.91 22.15 8.6C19.53 12.87 19.43 18.43 22.36 22.89C25.38 27.5 30.77 29.64 35.89 28.74C34.89 30.38 33.51 31.82 31.79 32.94Z' fill='%230077FF'/%3E%3C/svg%3E">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Sticky Navigation Bar (Reveals smoothly on scroll) -->
+  <header id="header-sticky" class="sticky-header" aria-label="Main Navigation">
+    <div class="container sticky-header-content">
+      <div class="sticky-nav-left">
+        <a href="#" class="logo logo--light logo--default" aria-label="Islamafy">
+          <svg class="logo-svg logo-svg--default" width="137" height="34" viewBox="0 0 181 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.5704 0C10.1056 0 0 10.0741 0 22.5C0 34.9259 10.1056 45 22.5704 45C35.0352 45 45.1408 34.9259 45.1408 22.5C45.1408 10.0741 35.0352 0 22.5704 0ZM31.7913 32.9398C25.6003 36.9766 17.2946 35.2342 13.2524 29.0571C9.20294 22.8854 10.9507 14.6056 17.1472 10.576C18.7134 9.55425 20.4162 8.90535 22.1514 8.60241C19.5333 12.8651 19.4308 18.4256 22.3582 22.8872C25.3755 27.503 30.7736 29.6379 35.8929 28.7434C34.8877 30.3836 33.5139 31.823 31.7913 32.9416V32.9398Z" fill="currentColor"/>
+            <path d="M60.3459 32.8448H55.6348V10.6298H60.3459V32.8466V32.8448Z" fill="currentColor"/>
+            <path d="M73.8066 21.195C73.5782 20.1212 72.6216 19.2429 71.0105 19.2429C69.5738 19.2429 68.4427 19.8936 68.4535 20.892C68.4427 21.6951 69.0199 22.2257 70.5753 22.5627L73.5998 23.1704C76.8437 23.8318 78.4207 25.2748 78.4314 27.6822C78.4207 30.9697 75.3188 33.171 70.9889 33.171C66.659 33.171 63.8394 31.2081 63.4043 28.0174L67.9644 27.779C68.2467 29.1341 69.3472 29.8404 71.0015 29.8404C72.6558 29.8404 73.7005 29.1359 73.7221 28.1482C73.7005 27.3129 73.037 26.7823 71.5787 26.4884L68.6837 25.9129C65.42 25.2623 63.8413 23.6454 63.852 21.152C63.8413 17.9415 66.659 15.9661 70.9368 15.9661C75.2146 15.9661 77.6403 17.8644 78.0538 20.9351L73.8102 21.195H73.8066Z" fill="currentColor"/>
+            <path d="M85.9965 32.8448H81.3608V10.6298H85.9965V32.8466V32.8448Z" fill="currentColor"/>
+            <path d="M88.9134 28.1913C88.9134 24.47 91.884 23.3639 95.1926 23.061C98.0984 22.7796 99.2402 22.638 99.2402 21.5642V21.4997C99.2402 20.1338 98.3375 19.3415 96.7587 19.3415C95.0937 19.3415 94.1029 20.1553 93.7882 21.2613L89.5014 20.9135C90.1434 17.877 92.7758 15.9661 96.7803 15.9661C100.501 15.9661 103.874 17.6368 103.874 21.6073V32.8447H99.4776V30.5341H99.3463C98.5299 32.0847 96.9296 33.1584 94.4607 33.1584C91.2726 33.1584 88.9116 31.4878 88.9116 28.1895L88.9134 28.1913ZM99.2726 26.8899V25.1224C98.7169 25.4917 97.0626 25.7301 96.0521 25.8717C94.4194 26.0994 93.3423 26.7393 93.3423 28.0407C93.3423 29.3421 94.3654 29.9713 95.7913 29.9713C97.8268 29.9713 99.2726 28.6376 99.2726 26.8899Z" fill="currentColor"/>
+            <path d="M107.479 16.183H111.897V19.1228H112.093C112.789 17.16 114.497 15.9661 116.75 15.9661C119.003 15.9661 120.755 17.1922 121.289 19.1228H121.463C122.148 17.2137 124.053 15.9661 126.502 15.9661C129.614 15.9661 131.768 18.0276 131.768 21.6395V32.8447H127.144V22.5501C127.144 20.6949 126.034 19.7735 124.554 19.7735C122.868 19.7735 121.877 20.9458 121.877 22.6702V32.8447H117.383V22.4533C117.383 20.815 116.36 19.7735 114.837 19.7735C113.314 19.7735 112.116 20.9996 112.116 22.8441V32.8465H107.481V16.1848L107.479 16.183Z" fill="currentColor"/>
+            <path d="M134.644 28.1913C134.644 24.47 137.614 23.3639 140.923 23.061C143.829 22.7796 144.971 22.638 144.971 21.5642V21.4997C144.971 20.1338 144.068 19.3415 142.489 19.3415C140.824 19.3415 139.833 20.1553 139.519 21.2613L135.232 20.9135C135.874 17.877 138.506 15.9661 142.511 15.9661C146.231 15.9661 149.604 17.6368 149.604 21.6073V32.8447H145.208V30.5341H145.077C144.26 32.0847 142.66 33.1584 140.191 33.1584C137.003 33.1584 134.64 31.4878 134.64 28.1895L134.644 28.1913ZM145.003 26.8899V25.1224C144.447 25.4917 142.793 25.7301 141.782 25.8717C140.15 26.0994 139.073 26.7393 139.073 28.0407C139.073 29.3421 140.096 29.9713 141.522 29.9713C143.557 29.9713 145.003 28.6376 145.003 26.8899Z" fill="currentColor"/>
+            <path d="M162.35 19.6551H159.03V32.8464H154.395V19.6551H152.034V16.1847H154.395V14.9801C154.395 11.3574 156.734 9.58997 159.879 9.58997C161.305 9.58997 162.578 9.8714 163.155 10.0453L162.339 13.5156C161.968 13.3973 161.402 13.2772 160.848 13.2772C159.489 13.2772 159.03 13.9387 159.03 15.068V16.1847H162.35V19.6551Z" fill="currentColor"/>
+            <path d="M165.094 38.8229L166.138 35.2432C167.771 35.7415 168.891 35.6447 169.544 34.1264L169.848 33.3234L163.853 16.1849H168.728L172.187 28.4208H172.362L175.856 16.1849H180.763L174.234 34.7556C173.288 37.4247 171.274 39.3338 167.879 39.3338C166.563 39.3338 165.615 39.0523 165.094 38.8247V38.8229Z" fill="currentColor"/>
+          </svg>
+        </a>
+        <span class="badge-tag">Coming Soon</span>
+      </div>
+
+      <nav class="sticky-nav-links">
+        <a href="#problem">The Problem</a>
+        <a href="#solution">The Solution</a>
+        <a href="#features">Features</a>
+        <a href="#steps">How It Works</a>
+      </nav>
+
+      <div>
+        <button id="nav-waitlist-btn" class="btn-nav-waitlist" type="button">Join Waitlist</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =====================================================================
+         1. HERO SECTION (100vh Rounded Canvas Card)
+         ===================================================================== -->
+    <section class="hero-wrapper" id="hero">
+      <div class="hero-card">
+        <!-- Ambient radial glow effect inside card -->
+        <div class="hero-card-glow"></div>
+
+        <!-- Top Brand Header: Logo & COMING SOON pill -->
+        <div class="hero-brand-header">
+          <a href="#" class="logo logo--light logo--large" aria-label="Islamafy">
+            <svg class="logo-svg logo-svg--large" width="181" height="45" viewBox="0 0 181 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.5704 0C10.1056 0 0 10.0741 0 22.5C0 34.9259 10.1056 45 22.5704 45C35.0352 45 45.1408 34.9259 45.1408 22.5C45.1408 10.0741 35.0352 0 22.5704 0ZM31.7913 32.9398C25.6003 36.9766 17.2946 35.2342 13.2524 29.0571C9.20294 22.8854 10.9507 14.6056 17.1472 10.576C18.7134 9.55425 20.4162 8.90535 22.1514 8.60241C19.5333 12.8651 19.4308 18.4256 22.3582 22.8872C25.3755 27.503 30.7736 29.6379 35.8929 28.7434C34.8877 30.3836 33.5139 31.823 31.7913 32.9416V32.9398Z" fill="currentColor"/>
+              <path d="M60.3459 32.8448H55.6348V10.6298H60.3459V32.8466V32.8448Z" fill="currentColor"/>
+              <path d="M73.8066 21.195C73.5782 20.1212 72.6216 19.2429 71.0105 19.2429C69.5738 19.2429 68.4427 19.8936 68.4535 20.892C68.4427 21.6951 69.0199 22.2257 70.5753 22.5627L73.5998 23.1704C76.8437 23.8318 78.4207 25.2748 78.4314 27.6822C78.4207 30.9697 75.3188 33.171 70.9889 33.171C66.659 33.171 63.8394 31.2081 63.4043 28.0174L67.9644 27.779C68.2467 29.1341 69.3472 29.8404 71.0015 29.8404C72.6558 29.8404 73.7005 29.1359 73.7221 28.1482C73.7005 27.3129 73.037 26.7823 71.5787 26.4884L68.6837 25.9129C65.42 25.2623 63.8413 23.6454 63.852 21.152C63.8413 17.9415 66.659 15.9661 70.9368 15.9661C75.2146 15.9661 77.6403 17.8644 78.0538 20.9351L73.8102 21.195H73.8066Z" fill="currentColor"/>
+              <path d="M85.9965 32.8448H81.3608V10.6298H85.9965V32.8466V32.8448Z" fill="currentColor"/>
+              <path d="M88.9134 28.1913C88.9134 24.47 91.884 23.3639 95.1926 23.061C98.0984 22.7796 99.2402 22.638 99.2402 21.5642V21.4997C99.2402 20.1338 98.3375 19.3415 96.7587 19.3415C95.0937 19.3415 94.1029 20.1553 93.7882 21.2613L89.5014 20.9135C90.1434 17.877 92.7758 15.9661 96.7803 15.9661C100.501 15.9661 103.874 17.6368 103.874 21.6073V32.8447H99.4776V30.5341H99.3463C98.5299 32.0847 96.9296 33.1584 94.4607 33.1584C91.2726 33.1584 88.9116 31.4878 88.9116 28.1895L88.9134 28.1913ZM99.2726 26.8899V25.1224C98.7169 25.4917 97.0626 25.7301 96.0521 25.8717C94.4194 26.0994 93.3423 26.7393 93.3423 28.0407C93.3423 29.3421 94.3654 29.9713 95.7913 29.9713C97.8268 29.9713 99.2726 28.6376 99.2726 26.8899Z" fill="currentColor"/>
+              <path d="M107.479 16.183H111.897V19.1228H112.093C112.789 17.16 114.497 15.9661 116.75 15.9661C119.003 15.9661 120.755 17.1922 121.289 19.1228H121.463C122.148 17.2137 124.053 15.9661 126.502 15.9661C129.614 15.9661 131.768 18.0276 131.768 21.6395V32.8447H127.144V22.5501C127.144 20.6949 126.034 19.7735 124.554 19.7735C122.868 19.7735 121.877 20.9458 121.877 22.6702V32.8447H117.383V22.4533C117.383 20.815 116.36 19.7735 114.837 19.7735C113.314 19.7735 112.116 20.9996 112.116 22.8441V32.8465H107.481V16.1848L107.479 16.183Z" fill="currentColor"/>
+              <path d="M134.644 28.1913C134.644 24.47 137.614 23.3639 140.923 23.061C143.829 22.7796 144.971 22.638 144.971 21.5642V21.4997C144.971 20.1338 144.068 19.3415 142.489 19.3415C140.824 19.3415 139.833 20.1553 139.519 21.2613L135.232 20.9135C135.874 17.877 138.506 15.9661 142.511 15.9661C146.231 15.9661 149.604 17.6368 149.604 21.6073V32.8447H145.208V30.5341H145.077C144.26 32.0847 142.66 33.1584 140.191 33.1584C137.003 33.1584 134.64 31.4878 134.64 28.1895L134.644 28.1913ZM145.003 26.8899V25.1224C144.447 25.4917 142.793 25.7301 141.782 25.8717C140.15 26.0994 139.073 26.7393 139.073 28.0407C139.073 29.3421 140.096 29.9713 141.522 29.9713C143.557 29.9713 145.003 28.6376 145.003 26.8899Z" fill="currentColor"/>
+              <path d="M162.35 19.6551H159.03V32.8464H154.395V19.6551H152.034V16.1847H154.395V14.9801C154.395 11.3574 156.734 9.58997 159.879 9.58997C161.305 9.58997 162.578 9.8714 163.155 10.0453L162.339 13.5156C161.968 13.3973 161.402 13.2772 160.848 13.2772C159.489 13.2772 159.03 13.9387 159.03 15.068V16.1847H162.35V19.6551Z" fill="currentColor"/>
+              <path d="M165.094 38.8229L166.138 35.2432C167.771 35.7415 168.891 35.6447 169.544 34.1264L169.848 33.3234L163.853 16.1849H168.728L172.187 28.4208H172.362L175.856 16.1849H180.763L174.234 34.7556C173.288 37.4247 171.274 39.3338 167.879 39.3338C166.563 39.3338 165.615 39.0523 165.094 38.8247V38.8229Z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <!-- COMING SOON Frosted Glass Badge -->
+          <div class="coming-soon-pill glass-pill">
+            <span>COMING SOON</span>
+          </div>
+        </div>
+
+        <!-- Center Typography & Waitlist Form -->
+        <div class="hero-body">
+          <h1 class="hero-headline">
+            Islamic audio <br>
+            <span>for everyone.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            We're getting close to making this a reality. Sign up for early access to Islamafy and be among the first to experience it.
+          </p>
+
+          <!-- Hero Waitlist Form -->
+          <div class="waitlist-form-wrapper">
+            <div id="hero-waitlist-container">
+              <form id="hero-waitlist-form" class="waitlist-form glass-input" novalidate>
+                <input 
+                  type="email" 
+                  id="hero-email-input" 
+                  placeholder="Your email address" 
+                  required 
+                  autocomplete="email"
+                >
+                <button type="submit" class="btn-waitlist-submit" id="hero-submit-btn">
+                  <span class="btn-text">JOIN WAITLIST</span>
+                </button>
+              </form>
+              <p id="hero-error-msg" class="form-error" style="display: none;"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Interactive Mockup Phones Emerging from Bottom -->
+        <div class="hero-phones-container">
+          <div class="phones-grid" id="phones-grid">
+            
+            <!-- Phone 1: Search screen (Left) -->
+            <div class="phone-card side-phone" id="phone-left" data-phone="0">
+              <div class="phone-mockup">
+                <div class="phone-camera-hole"></div>
+                <div class="phone-screen">
+                  <img src="assets/phone-search.jpg" alt="Islamafy Search UI" loading="eager">
+                  <div class="phone-gloss-overlay"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone 2: Sheikh Yasir Qadhi Profile (Middle, elevated) -->
+            <div class="phone-card center-phone active" id="phone-center" data-phone="1">
+              <div class="phone-mockup">
+                <div class="phone-dynamic-island"></div>
+                <div class="phone-screen">
+                  <img src="assets/phone-profile.jpg" alt="Sheikh Yasir Qadhi Profile on Islamafy" loading="eager">
+                  <div class="phone-gloss-overlay"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone 3: Recently Played & Continue Listening (Right) -->
+            <div class="phone-card side-phone" id="phone-right" data-phone="2">
+              <div class="phone-mockup">
+                <div class="phone-camera-hole"></div>
+                <div class="phone-screen">
+                  <img src="assets/phone-home.jpg" alt="Islamafy Home & Player" loading="eager">
+                  <div class="phone-gloss-overlay"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Atmospheric soft sky-blue haze clipping the phones at the bottom of the card -->
+        <div class="hero-phones-fade"></div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         2. THE PROBLEM SECTION
+         ===================================================================== -->
+    <section class="problem-section" id="problem">
+      <div class="container">
+        
+        <span class="section-pill-tag">THE PROBLEM</span>
+
+        <h2 class="section-headline">
+          Islamic content is everywhere. <br>
+          <span>But it doesn't have a home.</span>
+        </h2>
+
+        <div class="problem-narrative">
+          <p>
+            Scholars are teaching. Students are searching. The knowledge exists. 
+            But it lives on platforms built for everything else — entertainment, news, 
+            ads, endless scrolling. So beneficial content gets scattered. Buried. 
+            Sometimes censored.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. THE SOLUTION SECTION
+         ===================================================================== -->
+    <section class="solution-section" id="solution">
+      <div class="solution-bg">
+        <div class="solution-aura"></div>
+      </div>
+
+      <div class="container">
+        <span class="solution-pill">THE SOLUTION</span>
+
+        <h2 class="solution-headline">
+          A better way to listen.
+        </h2>
+
+        <p class="solution-subtitle">
+          Islamafy brings Islamic audio into one focused place, 
+          so you can discover, follow, save, and listen to the 
+          content that only benefits you.
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. FEATURES GRID SECTION (6 Interactive Cards)
+         ===================================================================== -->
+    <section class="features-section" id="features">
+      <div class="container">
+        
+        <div class="features-header">
+          <h2 class="section-headline">
+            Everything you need <br>
+            to keep benefiting.
+          </h2>
+          <p class="problem-narrative" style="margin-top: 14px;">
+            Six ways to make sure nothing beneficial slips past you again.
+          </p>
+        </div>
+
+        <div class="features-grid">
+
+          <!-- CARD 1: DISCOVER -->
+          <div class="feature-card">
+            <div class="feature-preview-wrap">
+              <div class="feature-preview-box">
+                <div class="feature-search-header">Search</div>
+                <div class="feature-search-input">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#898989" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <input type="text" id="feature-search-field" placeholder="Search scholars, lectures, topics, series...">
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-text-block">
+              <h3 class="feature-title">Discover</h3>
+              <p class="feature-description">Find what benefits you.</p>
+            </div>
+          </div>
+
+          <!-- CARD 2: CONTINUE -->
+          <div class="feature-card">
+            <div class="feature-preview-wrap">
+              <div class="feature-preview-box">
+                <div class="continue-label">Continue Listening</div>
+
+                <div class="continue-item">
+                  <div class="continue-cover-btn" id="continue-play-btn" title="Play / Pause">
+                    <img src="assets/logo-yaqeen.png" alt="Yaqeen Institute" id="continue-cover-img">
+                    <div class="continue-play-overlay">
+                      <svg id="continue-play-icon" width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="continue-details">
+                    <p class="continue-title">Lessons From the<br>Life of the Prophet ﷺ, Ep. 4</p>
+
+                    <div class="continue-scrubber" id="continue-scrubber">
+                      <div class="continue-scrubber-fill" id="continue-scrubber-fill" style="width: 45%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-text-block">
+              <h3 class="feature-title">Continue</h3>
+              <p class="feature-description">Pick up where you left off.</p>
+            </div>
+          </div>
+
+          <!-- CARD 3: FOLLOW -->
+          <div class="feature-card">
+            <div class="feature-preview-wrap">
+              <div class="feature-preview-box feature-preview-box--center">
+                <div class="scholar-center-card">
+                  <div class="scholar-avatar-wrap" style="margin: 0 auto;">
+                    <img src="assets/scholar-yasir-qadhi.png" alt="Sheikh Yasir Qadhi" class="scholar-avatar">
+                  </div>
+                  <div class="scholar-name-wrap" style="justify-content: center; margin-top: 8px;">
+                    <span class="scholar-name">Sheikh Yasir Qadhi</span>
+                    <svg width="14" height="14" viewBox="0 0 20 20" fill="var(--brand-blue)">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="scholar-meta" id="scholar-meta-text" style="text-align: center; margin-top: 4px;">743 lectures, 23 series, 16 collections</p>
+                  <div style="margin-top: 10px; display: flex; justify-content: center;">
+                    <button id="btn-follow-scholar" class="btn-follow following" type="button">
+                      Following
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-text-block">
+              <h3 class="feature-title">Follow</h3>
+              <p class="feature-description">Keep up with scholars you trust.</p>
+            </div>
+          </div>
+
+          <!-- CARD 4: SAVE -->
+          <div class="feature-card">
+            <div class="feature-preview-wrap">
+              <div class="feature-preview-box">
+                <div class="save-item">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <img src="assets/scholar-omar-suleiman.png" alt="Omar Suleiman" class="save-thumb">
+                    <div>
+                      <h4 class="scholar-name">Patience & Gratitude</h4>
+                      <p class="scholar-meta">Omar Suleiman · 28 min</p>
+                    </div>
+                  </div>
+
+                  <button id="btn-bookmark-toggle" class="btn-bookmark bookmarked" type="button" title="Saved to Library">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#0077FF" stroke="#0077FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-text-block">
+              <h3 class="feature-title">Save</h3>
+              <p class="feature-description">Keep what you want to return to.</p>
+            </div>
+          </div>
+
+          <!-- CARD 5: ORGANIZE -->
+          <div class="feature-card">
+            <div class="feature-preview-wrap">
+              <div class="feature-preview-box">
+                <div class="continue-label">4 playlists</div>
+                
+                <div class="playlists-grid">
+                  <div class="playlist-cover-card" style="background: linear-gradient(135deg, #FF7B92 0%, #E83E8C 100%);">
+                    <span class="playlist-card-title">Night Reminders</span>
+                  </div>
+                  <div class="playlist-cover-card" style="background: linear-gradient(135deg, #F3C363 0%, #D48028 100%);">
+                    <span class="playlist-card-title">Seerah Journey</span>
+                  </div>
+                  <div class="playlist-cover-card" style="background: linear-gradient(135deg, #F3C363 0%, #D48028 100%);">
+                    <span class="playlist-card-title">Tafsir Study</span>
+                  </div>
+                  <div class="playlist-cover-card" style="background: linear-gradient(135deg, #FF7B92 0%, #E83E8C 100%);">
+                    <span class="playlist-card-title">Morning Adhkar</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-text-block">
+              <h3 class="feature-title">Organize</h3>
+              <p class="feature-description">Group lectures into playlists</p>
+            </div>
+          </div>
+
+          <!-- CARD 6: OFFLINE -->
+          <div class="feature-card">
+            <div class="feature-preview-wrap">
+              <div class="feature-preview-box">
+                <div class="offline-item">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <img src="assets/scholar-nouman-ali-khan.png" alt="Nouman Ali Khan" class="save-thumb">
+                    <div>
+                      <h4 class="scholar-name">The Virtue of Patience</h4>
+                      <p class="scholar-meta">Nouman Ali Khan · 20 min</p>
+                    </div>
+                  </div>
+
+                  <button id="btn-download-toggle" class="btn-download-toggle downloaded" type="button" title="Downloaded (Click to remove)">
+                    <svg id="download-icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-text-block">
+              <h3 class="feature-title">Offline</h3>
+              <p class="feature-description">Download and listen wherever you are.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. JUST THREE SIMPLE STEPS SECTION (Matching Figma Screenshots 5 & 6)
+         ===================================================================== -->
+    <section class="steps-section" id="steps">
+      <div class="container">
+        
+        <div class="steps-layout">
+          
+          <!-- Sticky Left Side -->
+          <div class="steps-sticky-side">
+            <span class="steps-eyebrow">GETTING STARTED</span>
+            <h2 class="steps-headline">
+              Just three simple <br>
+              steps, and you're <br>
+              listening.
+            </h2>
+          </div>
+
+          <!-- Right Timeline & Steps -->
+          <div class="steps-timeline-side">
+            <div class="timeline-line"></div>
+
+            <div class="steps-list" id="steps-list">
+              
+              <!-- Step 1: Sign up -->
+              <div class="step-item active" data-step="1">
+                <div class="step-number-badge">1</div>
+                <div class="step-card">
+                  <!-- Floating preview box matching Figma Screenshot #5 -->
+                  <div class="step-preview-box">
+                    <p class="step-preview-label">What's your email?</p>
+                    <div class="step-email-input-bar"></div>
+                    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                      <span class="step-btn-next">Next</span>
+                    </div>
+                  </div>
+
+                  <div class="step-text-wrap">
+                    <h3 class="step-title">Sign up</h3>
+                    <p class="step-description">Takes under a minute — email, a password, and your name.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 2: Pick your interests -->
+              <div class="step-item" data-step="2">
+                <div class="step-number-badge">2</div>
+                <div class="step-card">
+                  <!-- Floating preview box matching Figma Screenshot #5 & #6 -->
+                  <div class="step-preview-box">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                      <p class="step-preview-label" style="margin-bottom: 0;">Choose 3 or more scholars you already follow</p>
+                      <span style="font-size: 11px; color: var(--brand-blue); font-weight: 700; cursor: pointer;">Done</span>
+                    </div>
+                    
+                    <div class="step-scholars-row">
+                      <div class="step-scholar-avatar-item">
+                        <img src="assets/scholar-yasir-qadhi.png" alt="Yasir Qadhi">
+                        <span>Yasir Qadhi</span>
+                      </div>
+                      <div class="step-scholar-avatar-item">
+                        <img src="assets/scholar-omar-suleiman.png" alt="Omar Suleiman">
+                        <span>Omar Suleiman</span>
+                      </div>
+                      <div class="step-scholar-avatar-item">
+                        <img src="assets/scholar-nouman-ali-khan.png" alt="Nouman Ali Khan">
+                        <span>Nouman Ali</span>
+                      </div>
+                      <div class="step-scholar-avatar-item">
+                        <img src="assets/scholar-mufti-menk.png" alt="Mufti Menk">
+                        <span>Mufti Menk</span>
+                      </div>
+                      <div class="step-scholar-avatar-item">
+                        <img src="assets/scholar-yasir-qadhi.png" alt="Lighthouse">
+                        <span>Lighthouse</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step-text-wrap">
+                    <h3 class="step-title">Pick your interests</h3>
+                    <p class="step-description">A few scholars, a few topics, a couple of series — so Home feels like yours from the first screen.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 3: Start listening -->
+              <div class="step-item" data-step="3">
+                <div class="step-number-badge">3</div>
+                <div class="step-card">
+                  <!-- Floating preview box matching Figma Screenshot #6 -->
+                  <div class="step-preview-box">
+                    <div class="step-player-scrubber-wrap">
+                      <div class="step-player-bar">
+                        <div class="step-player-fill" style="width: 68%;">
+                          <div class="step-player-thumb"></div>
+                        </div>
+                      </div>
+                      <div class="step-player-times">
+                        <span>10:51</span>
+                        <span>38:12</span>
+                      </div>
+                    </div>
+
+                    <div class="step-player-controls-row">
+                      <button type="button" class="step-ctrl-btn" title="Skip Back">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                          <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2"></line>
+                        </svg>
+                      </button>
+                      <button type="button" class="step-ctrl-btn" title="Rewind 15s">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <polyline points="1 4 1 10 7 10"></polyline>
+                          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                        </svg>
+                      </button>
+                      <button type="button" class="step-ctrl-play" title="Play">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </button>
+                      <button type="button" class="step-ctrl-btn" title="Bookmark">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                      </button>
+                      <button type="button" class="step-ctrl-btn" title="Skip Forward">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                          <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2"></line>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="step-text-wrap">
+                    <h3 class="step-title">Start listening</h3>
+                    <p class="step-description">Free, immediately, no card required, because it never will be.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         6. CALL TO ACTION SECTION (Matching Figma Screenshot #7)
+         ===================================================================== -->
+    <section class="cta-section" id="cta">
+      <div class="cta-bg">
+        <div class="cta-aura"></div>
+      </div>
+
+      <div class="container">
+        <h2 class="cta-headline">
+          Be there when <br>
+          it launches.
+        </h2>
+
+        <!-- CTA Waitlist Form -->
+        <div class="waitlist-form-wrapper">
+          <div id="cta-waitlist-container">
+            <form id="cta-waitlist-form" class="waitlist-form glass-input" novalidate>
+              <input 
+                type="email" 
+                id="cta-email-input" 
+                placeholder="Your email address" 
+                required 
+                autocomplete="email"
+              >
+              <button type="submit" class="btn-waitlist-submit" id="cta-submit-btn">
+                <span class="btn-text">JOIN WAITLIST</span>
+              </button>
+            </form>
+            <p id="cta-error-msg" class="form-error" style="display: none;"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       FOOTER (Matching Figma Screenshot #7)
+       ===================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        <!-- Brand & Description -->
+        <div>
+          <a href="#" class="logo logo--light logo--large" aria-label="Islamafy">
+            <svg class="logo-svg logo-svg--large" width="181" height="45" viewBox="0 0 181 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.5704 0C10.1056 0 0 10.0741 0 22.5C0 34.9259 10.1056 45 22.5704 45C35.0352 45 45.1408 34.9259 45.1408 22.5C45.1408 10.0741 35.0352 0 22.5704 0ZM31.7913 32.9398C25.6003 36.9766 17.2946 35.2342 13.2524 29.0571C9.20294 22.8854 10.9507 14.6056 17.1472 10.576C18.7134 9.55425 20.4162 8.90535 22.1514 8.60241C19.5333 12.8651 19.4308 18.4256 22.3582 22.8872C25.3755 27.503 30.7736 29.6379 35.8929 28.7434C34.8877 30.3836 33.5139 31.823 31.7913 32.9416V32.9398Z" fill="currentColor"/>
+              <path d="M60.3459 32.8448H55.6348V10.6298H60.3459V32.8466V32.8448Z" fill="currentColor"/>
+              <path d="M73.8066 21.195C73.5782 20.1212 72.6216 19.2429 71.0105 19.2429C69.5738 19.2429 68.4427 19.8936 68.4535 20.892C68.4427 21.6951 69.0199 22.2257 70.5753 22.5627L73.5998 23.1704C76.8437 23.8318 78.4207 25.2748 78.4314 27.6822C78.4207 30.9697 75.3188 33.171 70.9889 33.171C66.659 33.171 63.8394 31.2081 63.4043 28.0174L67.9644 27.779C68.2467 29.1341 69.3472 29.8404 71.0015 29.8404C72.6558 29.8404 73.7005 29.1359 73.7221 28.1482C73.7005 27.3129 73.037 26.7823 71.5787 26.4884L68.6837 25.9129C65.42 25.2623 63.8413 23.6454 63.852 21.152C63.8413 17.9415 66.659 15.9661 70.9368 15.9661C75.2146 15.9661 77.6403 17.8644 78.0538 20.9351L73.8102 21.195H73.8066Z" fill="currentColor"/>
+              <path d="M85.9965 32.8448H81.3608V10.6298H85.9965V32.8466V32.8448Z" fill="currentColor"/>
+              <path d="M88.9134 28.1913C88.9134 24.47 91.884 23.3639 95.1926 23.061C98.0984 22.7796 99.2402 22.638 99.2402 21.5642V21.4997C99.2402 20.1338 98.3375 19.3415 96.7587 19.3415C95.0937 19.3415 94.1029 20.1553 93.7882 21.2613L89.5014 20.9135C90.1434 17.877 92.7758 15.9661 96.7803 15.9661C100.501 15.9661 103.874 17.6368 103.874 21.6073V32.8447H99.4776V30.5341H99.3463C98.5299 32.0847 96.9296 33.1584 94.4607 33.1584C91.2726 33.1584 88.9116 31.4878 88.9116 28.1895L88.9134 28.1913ZM99.2726 26.8899V25.1224C98.7169 25.4917 97.0626 25.7301 96.0521 25.8717C94.4194 26.0994 93.3423 26.7393 93.3423 28.0407C93.3423 29.3421 94.3654 29.9713 95.7913 29.9713C97.8268 29.9713 99.2726 28.6376 99.2726 26.8899Z" fill="currentColor"/>
+              <path d="M107.479 16.183H111.897V19.1228H112.093C112.789 17.16 114.497 15.9661 116.75 15.9661C119.003 15.9661 120.755 17.1922 121.289 19.1228H121.463C122.148 17.2137 124.053 15.9661 126.502 15.9661C129.614 15.9661 131.768 18.0276 131.768 21.6395V32.8447H127.144V22.5501C127.144 20.6949 126.034 19.7735 124.554 19.7735C122.868 19.7735 121.877 20.9458 121.877 22.6702V32.8447H117.383V22.4533C117.383 20.815 116.36 19.7735 114.837 19.7735C113.314 19.7735 112.116 20.9996 112.116 22.8441V32.8465H107.481V16.1848L107.479 16.183Z" fill="currentColor"/>
+              <path d="M134.644 28.1913C134.644 24.47 137.614 23.3639 140.923 23.061C143.829 22.7796 144.971 22.638 144.971 21.5642V21.4997C144.971 20.1338 144.068 19.3415 142.489 19.3415C140.824 19.3415 139.833 20.1553 139.519 21.2613L135.232 20.9135C135.874 17.877 138.506 15.9661 142.511 15.9661C146.231 15.9661 149.604 17.6368 149.604 21.6073V32.8447H145.208V30.5341H145.077C144.26 32.0847 142.66 33.1584 140.191 33.1584C137.003 33.1584 134.64 31.4878 134.64 28.1895L134.644 28.1913ZM145.003 26.8899V25.1224C144.447 25.4917 142.793 25.7301 141.782 25.8717C140.15 26.0994 139.073 26.7393 139.073 28.0407C139.073 29.3421 140.096 29.9713 141.522 29.9713C143.557 29.9713 145.003 28.6376 145.003 26.8899Z" fill="currentColor"/>
+              <path d="M162.35 19.6551H159.03V32.8464H154.395V19.6551H152.034V16.1847H154.395V14.9801C154.395 11.3574 156.734 9.58997 159.879 9.58997C161.305 9.58997 162.578 9.8714 163.155 10.0453L162.339 13.5156C161.968 13.3973 161.402 13.2772 160.848 13.2772C159.489 13.2772 159.03 13.9387 159.03 15.068V16.1847H162.35V19.6551Z" fill="currentColor"/>
+              <path d="M165.094 38.8229L166.138 35.2432C167.771 35.7415 168.891 35.6447 169.544 34.1264L169.848 33.3234L163.853 16.1849H168.728L172.187 28.4208H172.362L175.856 16.1849H180.763L174.234 34.7556C173.288 37.4247 171.274 39.3338 167.879 39.3338C166.563 39.3338 165.615 39.0523 165.094 38.8247V38.8229Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <p class="footer-mission">
+            Islamic audio in one focused place, so you can discover, follow, save, and listen to the content that only benefits you.
+          </p>
+        </div>
+
+        <!-- Contact info -->
+        <div>
+          <h4 class="footer-heading">Contact us</h4>
+          <ul class="footer-links-list">
+            <li><a href="mailto:islamafyng@gmail.com">islamafyng@gmail.com</a></li>
+            <li><a href="tel:+2349038586405">+234 903 858 6405</a></li>
+          </ul>
+        </div>
+
+        <!-- Social links -->
+        <div>
+          <h4 class="footer-heading">Follow us on</h4>
+          <div class="footer-social-row">
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn" aria-label="Facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+
+            <!-- X / Twitter -->
+            <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn" aria-label="X (Twitter)">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright & Legal -->
+      <div class="footer-bottom-bar">
+        <p>© <span id="current-year">2026</span> Islamafy. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       BOTTOM FLOATING AUDIO PLAYER PREVIEW
+       ===================================================================== -->
+  <aside id="audio-player-preview" class="audio-player-preview" aria-label="Audio Player Preview">
+    <div class="player-inner-card">
+      
+      <!-- Track Info -->
+      <div class="player-track-info">
+        <div class="player-cover">
+          <img src="assets/logo-yaqeen.png" alt="Yaqeen Institute" id="player-track-image">
+        </div>
+        <div class="player-text">
+          <h5 class="player-track-title" id="player-track-title">Lessons From the Life of the Prophet ﷺ, Ep. 4</h5>
+          <p class="player-track-artist" id="player-track-artist">Yaqeen Institute</p>
+        </div>
+        <button id="btn-player-like" class="btn-player-fav liked" type="button" title="Like / Save">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Center Controls -->
+      <div class="player-center-controls">
+        <div class="player-buttons-row">
+          <button class="player-btn-ctrl" type="button" title="Previous" id="btn-player-prev">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="19 20 9 12 19 4 19 20"></polygon>
+              <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="3"></line>
+            </svg>
+          </button>
+
+          <button class="btn-play-pause-main" id="btn-player-play-pause" type="button" title="Play / Pause">
+            <svg id="player-main-play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </button>
+
+          <button class="player-btn-ctrl" type="button" title="Next" id="btn-player-next">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 4 15 12 5 20 5 4"></polygon>
+              <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="3"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Scrubber -->
+        <div class="player-scrubber-wrap" id="player-scrubber">
+          <div class="player-scrubber-bar" id="player-scrubber-bar" style="width: 32%;"></div>
+        </div>
+      </div>
+
+      <!-- Right Tools -->
+      <div class="player-right-tools">
+        <button id="btn-player-mute" class="player-btn-tool" type="button" title="Mute / Unmute">
+          <svg id="volume-icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+
+        <button id="btn-player-close" class="player-btn-tool" type="button" title="Close Player">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- =====================================================================
+       FLOATING TOAST NOTIFICATION
+       ===================================================================== -->
+  <div id="toast-notification" class="toast-notification" role="alert" aria-live="polite">
+    <div class="toast-icon">✓</div>
+    <span class="toast-message" id="toast-message-text">Welcome aboard! Added to early access.</span>
+    <button class="toast-close-btn" id="toast-close-btn" aria-label="Close notification">✕</button>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
