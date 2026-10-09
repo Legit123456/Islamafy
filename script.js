@@ -134,37 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---------------------------------------------------------------------------
-  // 5. Feature Card 1: Search & Topic Filter Tags
-  // ---------------------------------------------------------------------------
-  const searchInput = document.getElementById('feature-search-field');
-  const tagButtons = document.querySelectorAll('.feature-tag-btn');
-
-  tagButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const tag = btn.getAttribute('data-tag');
-      const isAlreadyActive = btn.classList.contains('active');
-
-      tagButtons.forEach((b) => b.classList.remove('active'));
-
-      if (!isAlreadyActive) {
-        btn.classList.add('active');
-        if (searchInput) searchInput.value = tag;
-      } else {
-        if (searchInput && searchInput.value === tag) {
-          searchInput.value = '';
-        }
-      }
-    });
-  });
-
-  // ---------------------------------------------------------------------------
-  // 6. Global Audio Player Preview & Continue Listening Card Sync
+  // 5. Global Audio Player Preview & Continue Listening Card Sync
   // ---------------------------------------------------------------------------
   const audioPlayer = document.getElementById('audio-player-preview');
   const continuePlayBtn = document.getElementById('continue-play-btn');
   const continueCoverImg = document.getElementById('continue-cover-img');
-  const continuePlayIcon = document.getElementById('continue-play-icon');
-  const continueStatusText = document.getElementById('continue-status-text');
   const continueScrubber = document.getElementById('continue-scrubber');
   const continueScrubberFill = document.getElementById('continue-scrubber-fill');
 
@@ -189,19 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     isPlaying = playing;
 
     if (continueCoverImg) {
-      if (isPlaying) {
-        continueCoverImg.style.opacity = '0.35';
-      } else {
-        continueCoverImg.style.opacity = '1';
-      }
-    }
-
-    if (continuePlayIcon) {
-      continuePlayIcon.innerHTML = isPlaying ? pauseIconSVG : playIconSVG;
-    }
-
-    if (continueStatusText) {
-      continueStatusText.textContent = isPlaying ? 'Playing' : '8 min left';
+      continueCoverImg.style.opacity = isPlaying ? '0.35' : '1';
     }
 
     if (playerMainPlayIcon) {
@@ -269,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---------------------------------------------------------------------------
-  // 7. Feature Card 3: Follow Scholar Toggle
+  // 6. Feature Card 3: Follow Scholar Toggle
   // ---------------------------------------------------------------------------
   const btnFollowScholar = document.getElementById('btn-follow-scholar');
   let isFollowing = true;
@@ -286,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---------------------------------------------------------------------------
-  // 8. Feature Card 4: Save Bookmark Toggle
+  // 7. Feature Card 4: Save Bookmark Toggle
   // ---------------------------------------------------------------------------
   const btnBookmark = document.getElementById('btn-bookmark-toggle');
   btnBookmark?.addEventListener('click', () => {
@@ -295,21 +257,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---------------------------------------------------------------------------
-  // 9. Feature Card 6: Offline Download Simulation
+  // 8. Feature Card 6: Offline Download Simulation
   // ---------------------------------------------------------------------------
   const btnDownloadToggle = document.getElementById('btn-download-toggle');
   let isDownloaded = true;
   let isDownloading = false;
 
   const downloadIconDownloaded = `
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    <svg width="20" height="20" viewBox="0 0 30 30" fill="none">
+      <circle cx="15" cy="15" r="7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M11.67 15.42L13.75 17.5L18.33 12.92" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   `;
 
   const downloadIconInitial = `
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
       <polyline points="7 10 12 15 17 10"></polyline>
       <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -317,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
 
   const downloadSpinner = `
-    <div style="width: 18px; height: 18px; border: 2px solid #10B981; border-top-color: transparent; border-radius: 50%;" class="spinner"></div>
+    <div style="width: 16px; height: 16px; border: 2px solid #10453F; border-top-color: transparent; border-radius: 50%;" class="spinner"></div>
   `;
 
   btnDownloadToggle?.addEventListener('click', () => {
@@ -346,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---------------------------------------------------------------------------
-  // 10. Steps Section: Interactive Step Hover
+  // 9. Steps Section: Interactive Step Hover & Play Toggle
   // ---------------------------------------------------------------------------
   const stepItems = document.querySelectorAll('.step-item');
   stepItems.forEach((item) => {
@@ -356,8 +318,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const stepCtrlPlay = document.querySelector('.step-ctrl-play');
+  let isStepPlaying = false;
+  const playIconSvg = `
+    <svg width="44" height="44" viewBox="1044.48 5368.06 44.04 44.04" fill="none">
+      <path d="M1075.27 5390.21C1075.76 5390.49 1075.76 5391.2 1075.27 5391.48L1061.52 5399.41C1061.03 5399.7 1060.42 5399.34 1060.42 5398.78L1060.42 5382.91C1060.42 5382.34 1061.03 5381.99 1061.52 5382.27L1075.27 5390.21Z" fill="white"/>
+    </svg>
+  `;
+  const pauseIconSvg = `
+    <svg width="44" height="44" viewBox="1044.48 5368.06 44.04 44.04" fill="none">
+      <rect x="1059" y="5382" width="4.2" height="16" rx="1.5" fill="white"/>
+      <rect x="1070" y="5382" width="4.2" height="16" rx="1.5" fill="white"/>
+    </svg>
+  `;
+  stepCtrlPlay?.addEventListener('click', () => {
+    isStepPlaying = !isStepPlaying;
+    stepCtrlPlay.innerHTML = isStepPlaying ? pauseIconSvg : playIconSvg;
+    stepCtrlPlay.setAttribute('title', isStepPlaying ? 'Pause' : 'Play');
+  });
+
   // ---------------------------------------------------------------------------
-  // 11. Dynamic Year in Footer
+  // 10. Dynamic Year in Footer
   // ---------------------------------------------------------------------------
   const currentYearEl = document.getElementById('current-year');
   if (currentYearEl) {

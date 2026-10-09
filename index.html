@@ -12,8 +12,93 @@
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 45'%3E%3Cpath d='M22.57 0C10.1 0 0 10.07 0 22.5C0 34.93 10.1 45 22.57 45C35.04 45 45.14 34.93 45.14 22.5C45.14 10.07 35.04 0 22.57 0ZM31.79 32.94C25.6 36.98 17.29 35.23 13.25 29.06C9.2 22.89 10.95 14.61 17.15 10.58C18.71 9.55 20.42 8.91 22.15 8.6C19.53 12.87 19.43 18.43 22.36 22.89C25.38 27.5 30.77 29.64 35.89 28.74C34.89 30.38 33.51 31.82 31.79 32.94Z' fill='%230077FF'/%3E%3C/svg%3E">
 
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Urbanist -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet (with cache-buster to ensure instant reload) -->
+  <link rel="stylesheet" href="style.css?v=exact-figma-v10">
+
+  <!-- Direct Figma Hero Phone Clipping (Immune to browser external CSS caching) -->
+  <style>
+    .hero-card {
+      overflow: hidden !important;
+      padding-bottom: 0 !important;
+    }
+
+    .hero-phones-container {
+      margin-bottom: 0 !important;
+      display: flex !important;
+      align-items: flex-end !important;
+      justify-content: center !important;
+    }
+
+    .phones-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      align-items: flex-end !important;
+    }
+
+    .phone-card {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+    }
+
+    .phone-mockup {
+      border-bottom: none !important;
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .phone-screen {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      overflow: hidden !important;
+      height: 135px !important;
+    }
+
+    .phone-card.center-phone .phone-screen {
+      height: 175px !important;
+    }
+
+    @media (min-width: 640px) {
+      .phone-screen {
+        height: 180px !important;
+      }
+
+      .phone-card.center-phone .phone-screen {
+        height: 235px !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .phone-screen {
+        height: 225px !important;
+      }
+
+      .phone-card.center-phone .phone-screen {
+        height: 295px !important;
+      }
+    }
+
+    .phone-screen img {
+      width: 100% !important;
+      height: auto !important;
+      min-height: 100% !important;
+      object-fit: cover !important;
+      object-position: top !important;
+      display: block !important;
+    }
+
+    .hero-phones-fade {
+      height: 60px !important;
+      background: linear-gradient(to top, rgba(183, 216, 254, 0.95) 0%, rgba(183, 216, 254, 0.35) 45%, transparent 100%) !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -244,7 +329,7 @@
             to keep benefiting.
           </h2>
           <p class="problem-narrative" style="margin-top: 14px;">
-            Six ways to make sure nothing beneficial slips past you again.
+            Six ways to make sure nothing beneficial slips </br> past you again.
           </p>
         </div>
 
@@ -282,11 +367,6 @@
                 <div class="continue-item">
                   <div class="continue-cover-btn" id="continue-play-btn" title="Play / Pause">
                     <img src="assets/logo-yaqeen.png" alt="Yaqeen Institute" id="continue-cover-img">
-                    <div class="continue-play-overlay">
-                      <svg id="continue-play-icon" width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF">
-                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                      </svg>
-                    </div>
                   </div>
 
                   <div class="continue-details">
@@ -311,8 +391,8 @@
             <div class="feature-preview-wrap">
               <div class="feature-preview-box feature-preview-box--center">
                 <div class="scholar-center-card">
-                  <div class="scholar-avatar-wrap" style="margin: 0 auto;">
-                    <img src="assets/scholar-yasir-qadhi.png" alt="Sheikh Yasir Qadhi" class="scholar-avatar">
+                  <div class="scholar-avatar-wrap" style="margin: auto;">
+                    <img src="assets/scholar-yasir-qadhi.jpeg" alt="Sheikh Yasir Qadhi" class="scholar-avatar">
                   </div>
                   <div class="scholar-name-wrap" style="justify-content: center; margin-top: 8px;">
                     <span class="scholar-name">Sheikh Yasir Qadhi</span>
@@ -372,25 +452,40 @@
           <!-- CARD 5: ORGANIZE -->
           <div class="feature-card">
             <div class="feature-preview-wrap">
-              <div class="feature-preview-box">
-                <div class="continue-label">4 playlists</div>
+              <div class="feature-preview-box feature-preview-box--playlists">
+                <div class="playlists-header">4 playlists</div>
 
                 <div class="playlists-grid">
-                  <div class="playlist-cover-card"
-                    style="background: linear-gradient(135deg, #FF7B92 0%, #E83E8C 100%);">
-                    <span class="playlist-card-title">Night Reminders</span>
+                  <div class="playlist-item">
+                    <div class="playlist-cover-card playlist-cover--pink"></div>
+                    <div class="playlist-info">
+                      <h4 class="playlist-card-title">Night Reminders</h4>
+                      <p class="playlist-card-meta">12 saved</p>
+                    </div>
                   </div>
-                  <div class="playlist-cover-card"
-                    style="background: linear-gradient(135deg, #F3C363 0%, #D48028 100%);">
-                    <span class="playlist-card-title">Seerah Journey</span>
+
+                  <div class="playlist-item">
+                    <div class="playlist-cover-card playlist-cover--amber"></div>
+                    <div class="playlist-info">
+                      <h4 class="playlist-card-title">Seerah Journey</h4>
+                      <p class="playlist-card-meta">8 saved</p>
+                    </div>
                   </div>
-                  <div class="playlist-cover-card"
-                    style="background: linear-gradient(135deg, #F3C363 0%, #D48028 100%);">
-                    <span class="playlist-card-title">Tafsir Study</span>
+
+                  <div class="playlist-item">
+                    <div class="playlist-cover-card playlist-cover--amber"></div>
+                    <div class="playlist-info">
+                      <h4 class="playlist-card-title">Seerah Journey</h4>
+                      <p class="playlist-card-meta">8 saved</p>
+                    </div>
                   </div>
-                  <div class="playlist-cover-card"
-                    style="background: linear-gradient(135deg, #FF7B92 0%, #E83E8C 100%);">
-                    <span class="playlist-card-title">Morning Adhkar</span>
+
+                  <div class="playlist-item">
+                    <div class="playlist-cover-card playlist-cover--pink"></div>
+                    <div class="playlist-info">
+                      <h4 class="playlist-card-title">Night Reminders</h4>
+                      <p class="playlist-card-meta">12 saved</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -405,22 +500,23 @@
           <!-- CARD 6: OFFLINE -->
           <div class="feature-card">
             <div class="feature-preview-wrap">
-              <div class="feature-preview-box">
+              <div class="feature-preview-box feature-preview-box--offline">
                 <div class="offline-item">
-                  <div style="display: flex; align-items: center; gap: 12px;">
-                    <img src="assets/scholar-nouman-ali-khan.png" alt="Nouman Ali Khan" class="save-thumb">
-                    <div>
-                      <h4 class="scholar-name">The Virtue of Patience</h4>
-                      <p class="scholar-meta">Nouman Ali Khan · 20 min</p>
+                  <div class="offline-left">
+                    <img src="assets/scholar-nouman-ali-khan.png" alt="Nouman Ali Khan" class="offline-thumb">
+                    <div class="offline-info">
+                      <h4 class="offline-title">The Virtue of Patience</h4>
+                      <p class="offline-meta">Nouman Ali Khan <span class="offline-meta-separator">|</span> 30 min</p>
                     </div>
                   </div>
 
                   <button id="btn-download-toggle" class="btn-download-toggle downloaded" type="button"
                     title="Downloaded (Click to remove)">
-                    <svg id="download-icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    <svg id="download-icon-check" width="20" height="20" viewBox="0 0 30 30" fill="none">
+                      <circle cx="15" cy="15" r="7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M11.67 15.42L13.75 17.5L18.33 12.92" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </button>
                 </div>
@@ -467,17 +563,17 @@
                 <div class="step-number-badge">1</div>
                 <div class="step-card">
                   <!-- Floating preview box matching Figma Screenshot #5 -->
-                  <div class="step-preview-box">
+                  <div class="step-preview-box step-preview-box--email">
                     <p class="step-preview-label">What's your email?</p>
                     <div class="step-email-input-bar"></div>
-                    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                    <div class="step-email-btn-wrap">
                       <span class="step-btn-next">Next</span>
                     </div>
                   </div>
 
                   <div class="step-text-wrap">
                     <h3 class="step-title">Sign up</h3>
-                    <p class="step-description">Takes under a minute — email, a password, and your name.</p>
+                    <p class="step-description">Takes under a minute — email, <br>a password, and your name.</p>
                   </div>
                 </div>
               </div>
@@ -486,44 +582,42 @@
               <div class="step-item" data-step="2">
                 <div class="step-number-badge">2</div>
                 <div class="step-card">
-                  <!-- Floating preview box matching Figma Screenshot #5 & #6 -->
-                  <div class="step-preview-box">
-                    <div class="step-scholars-header"
-                      style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; gap: 8px;">
-                      <p class="step-preview-label" style="margin-bottom: 0;">Choose 3 or more scholars you already
-                        follow</p>
-                      <span
-                        style="font-size: 11px; color: var(--brand-blue); font-weight: 700; cursor: pointer; flex-shrink: 0;">Done</span>
+                  <!-- Floating preview box -->
+                  <div class="step-preview-box step-preview-box--scholars">
+                    <div class="step-scholars-header">
+                      <p class="step-scholars-title">Choose 3 or more scholars you already follow.</p>
+                      <span class="step-scholars-skip">Skip</span>
                     </div>
 
                     <div class="step-scholars-row">
                       <div class="step-scholar-avatar-item">
-                        <img src="assets/scholar-yasir-qadhi.png" alt="Yasir Qadhi">
-                        <span>Yasir Qadhi</span>
+                        <img src="assets/scholar-nouman-ali-khan.png" alt="Ustadh Nouman Ali Khan" class="step-scholar-img">
+                        <span class="step-scholar-name">Ustadh Nouman<br>Ali Khan</span>
                       </div>
                       <div class="step-scholar-avatar-item">
-                        <img src="assets/scholar-omar-suleiman.png" alt="Omar Suleiman">
-                        <span>Omar Suleiman</span>
+                        <img src="assets/Ustadh%20Wahaj%20Tarin.png" alt="Ustadh Wahaj Tarin" class="step-scholar-img">
+                        <span class="step-scholar-name">Ustadh Wahaj<br>Tarin</span>
                       </div>
                       <div class="step-scholar-avatar-item">
-                        <img src="assets/scholar-nouman-ali-khan.png" alt="Nouman Ali Khan">
-                        <span>Nouman Ali</span>
+                        <img src="assets/scholar-yasir-qadhi.png" alt="Sheikh Yasir Qadhi" class="step-scholar-img">
+                        <span class="step-scholar-name">Sheikh Yasir<br>Qadhi</span>
                       </div>
                       <div class="step-scholar-avatar-item">
-                        <img src="assets/scholar-mufti-menk.png" alt="Mufti Menk">
-                        <span>Mufti Menk</span>
+                        <img src="assets/scholar-omar-suleiman.png" alt="Sheikh Omar Suleiman" class="step-scholar-img">
+                        <span class="step-scholar-name">Sheikh<br>Omar Suleiman</span>
                       </div>
                       <div class="step-scholar-avatar-item">
-                        <img src="assets/scholar-yasir-qadhi.png" alt="Lighthouse">
-                        <span>Lighthouse</span>
+                        <img src="assets/scholar-mufti-menk.png" alt="Mufti Menk" class="step-scholar-img">
+                        <span class="step-scholar-name">Mufti Menk</span>
                       </div>
                     </div>
                   </div>
 
                   <div class="step-text-wrap">
                     <h3 class="step-title">Pick your interests</h3>
-                    <p class="step-description">A few scholars, a few topics, a couple of series — so Home feels like
-                      yours from the first screen.</p>
+                    <p class="step-description">A few scholars, a few topics, a couple <br>of series — so Home feels
+                      like
+                      yours <br>from the first screen.</p>
                   </div>
                 </div>
               </div>
@@ -533,48 +627,51 @@
                 <div class="step-number-badge">3</div>
                 <div class="step-card">
                   <!-- Floating preview box matching Figma Screenshot #6 -->
-                  <div class="step-preview-box">
+                  <div class="step-preview-box step-preview-box--player">
                     <div class="step-player-scrubber-wrap">
                       <div class="step-player-bar">
-                        <div class="step-player-fill" style="width: 68%;">
+                        <div class="step-player-fill" style="width: 73%;">
                           <div class="step-player-thumb"></div>
                         </div>
                       </div>
                       <div class="step-player-times">
-                        <span>10:51</span>
-                        <span>38:12</span>
+                        <span>30:53</span>
+                        <span>38:02</span>
                       </div>
                     </div>
 
                     <div class="step-player-controls-row">
                       <button type="button" class="step-ctrl-btn" title="Skip Back">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                          <polygon points="19 20 9 12 19 4 19 20"></polygon>
-                          <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2"></line>
+                        <svg width="18" height="18" viewBox="947.36 5381.08 18 18" fill="none">
+                          <path d="M961.499 5395.96L954.159 5390.08L961.499 5384.21V5395.96Z" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M951.223 5395.22V5384.95" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                       </button>
+
                       <button type="button" class="step-ctrl-btn" title="Rewind 15s">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="2">
-                          <polyline points="1 4 1 10 7 10"></polyline>
-                          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                        <svg width="18" height="18" viewBox="994.75 5380.84 18 18" fill="none">
+                          <path d="M996.748 5384.1V5388.51H1001.15" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M998.583 5392.18C999.081 5393.42 999.964 5394.46 1001.1 5395.16C1002.24 5395.87 1003.57 5396.18 1004.9 5396.07C1006.23 5395.95 1007.49 5395.42 1008.5 5394.53C1009.5 5393.65 1010.19 5392.47 1010.47 5391.16C1010.75 5389.86 1010.61 5388.5 1010.06 5387.28C1009.51 5386.06 1008.58 5385.05 1007.41 5384.4C1006.24 5383.75 1004.9 5383.49 1003.58 5383.66C1002.25 5383.83 1001.01 5384.43 1000.05 5385.35L996.748 5388.51" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                       </button>
+
                       <button type="button" class="step-ctrl-play" title="Play">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        <svg width="44" height="44" viewBox="1044.48 5368.06 44.04 44.04" fill="none">
+                          <path d="M1075.27 5390.21C1075.76 5390.49 1075.76 5391.2 1075.27 5391.48L1061.52 5399.41C1061.03 5399.7 1060.42 5399.34 1060.42 5398.78L1060.42 5382.91C1060.42 5382.34 1061.03 5381.99 1061.52 5382.27L1075.27 5390.21Z" fill="white"/>
                         </svg>
                       </button>
-                      <button type="button" class="step-ctrl-btn" title="Bookmark">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                          stroke-width="2">
-                          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+
+                      <button type="button" class="step-ctrl-btn" title="Forward 15s">
+                        <svg width="18" height="18" viewBox="1119.09 5381.04 18 18" fill="none">
+                          <path d="M1134.78 5389.98C1134.78 5391.49 1134.26 5392.96 1133.31 5394.13C1132.36 5395.31 1131.03 5396.12 1129.55 5396.44C1128.07 5396.76 1126.53 5396.56 1125.18 5395.87C1123.83 5395.19 1122.76 5394.06 1122.14 5392.68C1121.52 5391.3 1121.4 5389.75 1121.78 5388.29C1122.17 5386.83 1123.05 5385.54 1124.27 5384.65C1125.49 5383.76 1126.98 5383.31 1128.49 5383.38C1130.01 5383.46 1131.45 5384.05 1132.57 5385.06" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M1134.78 5383.37V5387.04H1131.1" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                       </button>
+
                       <button type="button" class="step-ctrl-btn" title="Skip Forward">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                          <polygon points="5 4 15 12 5 20 5 4"></polygon>
-                          <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2"></line>
+                        <svg width="18" height="18" viewBox="1167.63 5381.08 18 18" fill="none">
+                          <path d="M1171.49 5384.21L1178.83 5390.08L1171.49 5395.96V5384.21Z" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M1181.77 5384.95V5395.22" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                       </button>
                     </div>
@@ -582,7 +679,7 @@
 
                   <div class="step-text-wrap">
                     <h3 class="step-title">Start listening</h3>
-                    <p class="step-description">Free, immediately, no card required, because it never will be.</p>
+                    <p class="step-description">Free, immediately, no card <br>required, because it never will be.</p>
                   </div>
                 </div>
               </div>
