@@ -1832,7 +1832,7 @@ body {
   box-shadow: var(--shadow-card-hover);
 }
 
-/* Floating Preview Boxes inside Steps (Unified 360px x 160px with 22px radius, centered) */
+/* Floating Preview Boxes inside Steps */
 .step-preview-box {
   width: 360px;
   max-width: 100%;
