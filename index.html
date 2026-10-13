@@ -19,7 +19,7 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet (with cache-buster to ensure instant reload) -->
-  <link rel="stylesheet" href="style.css?v=exact-figma-v10">
+  <link rel="stylesheet" href="style.css?v=exact-figma-v11">
 
   <!-- Direct Figma Hero Phone Clipping (Immune to browser external CSS caching) -->
   <style>
@@ -278,7 +278,7 @@
         <span class="section-pill-tag">THE PROBLEM</span>
 
         <h2 class="section-headline">
-          Islamic content is everywhere. <br>
+          Islamic content is everywhere.
           <span>But it doesn't have a home.</span>
         </h2>
 
@@ -424,11 +424,11 @@
             <div class="feature-preview-wrap">
               <div class="feature-preview-box">
                 <div class="save-item">
-                  <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1;">
                     <img src="assets/scholar-omar-suleiman.png" alt="Omar Suleiman" class="save-thumb">
-                    <div>
-                      <h4 class="scholar-name">Patience & Gratitude</h4>
-                      <p class="scholar-meta">Omar Suleiman · 28 min</p>
+                    <div style="min-width: 0; flex: 1;">
+                      <h4 class="scholar-name" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Patience & Gratitude</h4>
+                      <p class="scholar-meta" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Omar Suleiman · 28 min</p>
                     </div>
                   </div>
 
@@ -473,18 +473,18 @@
                   </div>
 
                   <div class="playlist-item">
-                    <div class="playlist-cover-card playlist-cover--amber"></div>
+                    <div class="playlist-cover-card playlist-cover--blue"></div>
                     <div class="playlist-info">
-                      <h4 class="playlist-card-title">Seerah Journey</h4>
-                      <p class="playlist-card-meta">8 saved</p>
+                      <h4 class="playlist-card-title">Ramadan Prep</h4>
+                      <p class="playlist-card-meta">7 saved</p>
                     </div>
                   </div>
 
                   <div class="playlist-item">
-                    <div class="playlist-cover-card playlist-cover--pink"></div>
+                    <div class="playlist-cover-card playlist-cover--green"></div>
                     <div class="playlist-info">
-                      <h4 class="playlist-card-title">Night Reminders</h4>
-                      <p class="playlist-card-meta">12 saved</p>
+                      <h4 class="playlist-card-title">Du’ah</h4>
+                      <p class="playlist-card-meta">3 saved</p>
                     </div>
                   </div>
                 </div>
@@ -535,7 +535,7 @@
     </section>
 
     <!-- =====================================================================
-         5. JUST THREE SIMPLE STEPS SECTION (Matching Figma Screenshots 5 & 6)
+         5. JUST THREE SIMPLE STEPS SECTION 
          ===================================================================== -->
     <section class="steps-section" id="steps">
       <div class="container">
@@ -591,7 +591,8 @@
 
                     <div class="step-scholars-row">
                       <div class="step-scholar-avatar-item">
-                        <img src="assets/scholar-nouman-ali-khan.png" alt="Ustadh Nouman Ali Khan" class="step-scholar-img">
+                        <img src="assets/scholar-nouman-ali-khan.png" alt="Ustadh Nouman Ali Khan"
+                          class="step-scholar-img">
                         <span class="step-scholar-name">Ustadh Nouman<br>Ali Khan</span>
                       </div>
                       <div class="step-scholar-avatar-item">
@@ -643,35 +644,47 @@
                     <div class="step-player-controls-row">
                       <button type="button" class="step-ctrl-btn" title="Skip Back">
                         <svg width="18" height="18" viewBox="947.36 5381.08 18 18" fill="none">
-                          <path d="M961.499 5395.96L954.159 5390.08L961.499 5384.21V5395.96Z" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
-                          <path d="M951.223 5395.22V5384.95" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M961.499 5395.96L954.159 5390.08L961.499 5384.21V5395.96Z" stroke="currentColor"
+                            stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M951.223 5395.22V5384.95" stroke="currentColor" stroke-width="1.32"
+                            stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                       </button>
 
                       <button type="button" class="step-ctrl-btn" title="Rewind 15s">
                         <svg width="18" height="18" viewBox="994.75 5380.84 18 18" fill="none">
-                          <path d="M996.748 5384.1V5388.51H1001.15" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
-                          <path d="M998.583 5392.18C999.081 5393.42 999.964 5394.46 1001.1 5395.16C1002.24 5395.87 1003.57 5396.18 1004.9 5396.07C1006.23 5395.95 1007.49 5395.42 1008.5 5394.53C1009.5 5393.65 1010.19 5392.47 1010.47 5391.16C1010.75 5389.86 1010.61 5388.5 1010.06 5387.28C1009.51 5386.06 1008.58 5385.05 1007.41 5384.4C1006.24 5383.75 1004.9 5383.49 1003.58 5383.66C1002.25 5383.83 1001.01 5384.43 1000.05 5385.35L996.748 5388.51" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M996.748 5384.1V5388.51H1001.15" stroke="currentColor" stroke-width="1.32"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M998.583 5392.18C999.081 5393.42 999.964 5394.46 1001.1 5395.16C1002.24 5395.87 1003.57 5396.18 1004.9 5396.07C1006.23 5395.95 1007.49 5395.42 1008.5 5394.53C1009.5 5393.65 1010.19 5392.47 1010.47 5391.16C1010.75 5389.86 1010.61 5388.5 1010.06 5387.28C1009.51 5386.06 1008.58 5385.05 1007.41 5384.4C1006.24 5383.75 1004.9 5383.49 1003.58 5383.66C1002.25 5383.83 1001.01 5384.43 1000.05 5385.35L996.748 5388.51"
+                            stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                       </button>
 
                       <button type="button" class="step-ctrl-play" title="Play">
                         <svg width="44" height="44" viewBox="1044.48 5368.06 44.04 44.04" fill="none">
-                          <path d="M1075.27 5390.21C1075.76 5390.49 1075.76 5391.2 1075.27 5391.48L1061.52 5399.41C1061.03 5399.7 1060.42 5399.34 1060.42 5398.78L1060.42 5382.91C1060.42 5382.34 1061.03 5381.99 1061.52 5382.27L1075.27 5390.21Z" fill="white"/>
+                          <path
+                            d="M1075.27 5390.21C1075.76 5390.49 1075.76 5391.2 1075.27 5391.48L1061.52 5399.41C1061.03 5399.7 1060.42 5399.34 1060.42 5398.78L1060.42 5382.91C1060.42 5382.34 1061.03 5381.99 1061.52 5382.27L1075.27 5390.21Z"
+                            fill="white" />
                         </svg>
                       </button>
 
                       <button type="button" class="step-ctrl-btn" title="Forward 15s">
                         <svg width="18" height="18" viewBox="1119.09 5381.04 18 18" fill="none">
-                          <path d="M1134.78 5389.98C1134.78 5391.49 1134.26 5392.96 1133.31 5394.13C1132.36 5395.31 1131.03 5396.12 1129.55 5396.44C1128.07 5396.76 1126.53 5396.56 1125.18 5395.87C1123.83 5395.19 1122.76 5394.06 1122.14 5392.68C1121.52 5391.3 1121.4 5389.75 1121.78 5388.29C1122.17 5386.83 1123.05 5385.54 1124.27 5384.65C1125.49 5383.76 1126.98 5383.31 1128.49 5383.38C1130.01 5383.46 1131.45 5384.05 1132.57 5385.06" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
-                          <path d="M1134.78 5383.37V5387.04H1131.1" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path
+                            d="M1134.78 5389.98C1134.78 5391.49 1134.26 5392.96 1133.31 5394.13C1132.36 5395.31 1131.03 5396.12 1129.55 5396.44C1128.07 5396.76 1126.53 5396.56 1125.18 5395.87C1123.83 5395.19 1122.76 5394.06 1122.14 5392.68C1121.52 5391.3 1121.4 5389.75 1121.78 5388.29C1122.17 5386.83 1123.05 5385.54 1124.27 5384.65C1125.49 5383.76 1126.98 5383.31 1128.49 5383.38C1130.01 5383.46 1131.45 5384.05 1132.57 5385.06"
+                            stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M1134.78 5383.37V5387.04H1131.1" stroke="currentColor" stroke-width="1.32"
+                            stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                       </button>
 
                       <button type="button" class="step-ctrl-btn" title="Skip Forward">
                         <svg width="18" height="18" viewBox="1167.63 5381.08 18 18" fill="none">
-                          <path d="M1171.49 5384.21L1178.83 5390.08L1171.49 5395.96V5384.21Z" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
-                          <path d="M1181.77 5384.95V5395.22" stroke="currentColor" stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M1171.49 5384.21L1178.83 5390.08L1171.49 5395.96V5384.21Z" stroke="currentColor"
+                            stroke-width="1.32" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M1181.77 5384.95V5395.22" stroke="currentColor" stroke-width="1.32"
+                            stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                       </button>
                     </div>
@@ -693,7 +706,7 @@
     </section>
 
     <!-- =====================================================================
-         6. CALL TO ACTION SECTION (Matching Figma Screenshot #7)
+         6. CALL TO ACTION SECTION 
          ===================================================================== -->
     <section class="cta-section" id="cta">
       <div class="cta-bg">
@@ -723,7 +736,7 @@
   </main>
 
   <!-- =====================================================================
-       FOOTER (Matching Figma Screenshot #7)
+       FOOTER 
        ===================================================================== -->
   <footer class="site-footer">
     <div class="container">

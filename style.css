@@ -82,6 +82,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body,
@@ -99,6 +101,8 @@ body {
   color: var(--brand-dark);
   line-height: 1.5;
   overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -201,7 +205,7 @@ body {
   height: 32px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .logo-svg--default {
     height: 34px;
   }
@@ -865,7 +869,7 @@ body {
   color: var(--brand-dark);
   letter-spacing: -0.03em;
   line-height: 1.15;
-  max-width: 780px;
+  max-width: 680px;
   margin: 0 auto;
 }
 
@@ -967,6 +971,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: -10;
+  overflow: hidden;
   background: linear-gradient(180deg, #0077FF 0%, #4196ff 30%, #91c0ff 50%, #9bc7ff 95%, #9bc7ff 100%);
 }
 
@@ -1051,15 +1056,16 @@ body {
 
 .features-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 32px;
   max-width: 1060px;
+  width: 100%;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .features-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1072,11 +1078,16 @@ body {
   justify-content: space-between;
   min-height: 300px;
   transition: var(--transition-smooth);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .feature-card {
-    padding: 44px 44px 48px 44px;
+    padding: 34px 34px 34px 34px;
+    overflow: visible;
   }
 }
 
@@ -1086,12 +1097,15 @@ body {
 }
 
 .feature-preview-wrap {
+  width: 100%;
   max-width: 100%;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 8px;
   padding-bottom: 36px;
+  box-sizing: border-box;
 }
 
 .feature-preview-box {
@@ -1417,8 +1431,8 @@ body {
 
 /* Card 5: Playlists UI */
 .feature-preview-box--playlists {
-  width: 360px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 360px;
   min-height: 160px;
   border-radius: 22px;
   padding: 20px 24px;
@@ -1426,6 +1440,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   box-shadow: 0 10px 30px -12px rgba(3, 15, 11, 0.12), 0 4px 14px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .playlists-header {
@@ -1440,9 +1456,10 @@ body {
 
 .playlists-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
   width: 100%;
+  min-width: 0;
 }
 
 .playlist-item {
@@ -1450,6 +1467,7 @@ body {
   flex-direction: column;
   cursor: pointer;
   text-decoration: none;
+  min-width: 0;
 }
 
 .playlist-cover-card {
@@ -1472,6 +1490,14 @@ body {
 
 .playlist-cover--amber {
   background: linear-gradient(135deg, #F1C56B 0%, #C9752E 100%);
+}
+
+.playlist-cover--blue {
+  background: linear-gradient(135deg, #6b6df1 0%, #1c2692 100%);
+}
+
+.playlist-cover--green {
+  background: linear-gradient(135deg, #86f16b 0%, #25810e 100%);
 }
 
 .playlist-info {
@@ -1522,8 +1548,8 @@ body {
 
 /* Card 6: Offline Download UI */
 .feature-preview-box--offline {
-  width: 360px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 360px;
   min-height: 160px;
   border-radius: 22px;
   padding: 24px 28px;
@@ -1531,6 +1557,8 @@ body {
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 10px 30px -12px rgba(3, 15, 11, 0.12), 0 4px 14px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .offline-item {
@@ -1539,6 +1567,7 @@ body {
   justify-content: space-between;
   gap: 16px;
   width: 100%;
+  min-width: 0;
 }
 
 .offline-left {
@@ -1546,6 +1575,7 @@ body {
   align-items: center;
   gap: 16px;
   min-width: 0;
+  flex: 1;
 }
 
 .offline-thumb {
@@ -1562,6 +1592,7 @@ body {
   flex-direction: column;
   gap: 4px;
   min-width: 0;
+  flex: 1;
 }
 
 .offline-title {
@@ -1583,6 +1614,8 @@ body {
   color: #71717a;
   line-height: 1.2;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -2126,6 +2159,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: -10;
+  overflow: hidden;
   background: linear-gradient(180deg, #0077FF 0%, #1E82FF 35%, #569EFF 50%, #CCE3FE 100%);
 }
 
@@ -2294,9 +2328,10 @@ body {
   left: 50%;
   transform: translateX(-50%) translateY(120%);
   z-index: 950;
-  width: 100%;
+  width: calc(100% - 32px);
   max-width: 660px;
-  padding: 0 16px;
+  padding: 0;
+  box-sizing: border-box;
   opacity: 0;
   pointer-events: none;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
@@ -2507,6 +2542,8 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
   transform: translateY(-20px);
   opacity: 0;
   pointer-events: none;
@@ -2658,12 +2695,14 @@ body {
     padding: 0 8px;
     width: 100%;
     max-width: 100%;
+    box-sizing: border-box;
   }
 
   .phones-grid {
     gap: 8px;
     width: 100%;
-    max-width: 440px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-phones-fade {
@@ -2671,8 +2710,102 @@ body {
     background: linear-gradient(to top, rgba(184, 216, 254, 0.95) 0%, rgba(184, 216, 254, 0.4) 50%, transparent 100%);
   }
 
+  .hero-card-glow {
+    width: 100%;
+    max-width: 360px;
+    height: 240px;
+  }
+
+  .solution-aura,
+  .cta-aura {
+    width: 100%;
+    max-width: 360px;
+    height: 200px;
+  }
+
   .problem-section {
     padding: 50px 0 80px 0;
+  }
+
+  /* Features Grid Section - Mobile Optimization */
+  .features-section {
+    padding: 60px 0 80px 0;
+    overflow: hidden;
+  }
+
+  .features-header {
+    margin: 0 auto 36px auto;
+  }
+
+  .features-grid {
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .feature-card {
+    padding: 24px 18px 28px 18px;
+    border-radius: 24px;
+    min-height: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .feature-preview-wrap {
+    padding-top: 4px;
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .feature-preview-box {
+    width: 100%;
+    max-width: 320px;
+    min-height: auto;
+    padding: 16px 16px;
+    box-sizing: border-box;
+  }
+
+  .feature-preview-box--playlists {
+    padding: 16px 14px;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+  }
+
+  .playlists-grid {
+    gap: 8px;
+  }
+
+  .feature-preview-box--offline {
+    padding: 16px 14px;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+  }
+
+  .offline-item {
+    gap: 10px;
+  }
+
+  .offline-left {
+    gap: 10px;
+  }
+
+  .offline-thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .offline-title {
+    font-size: 13.5px;
+  }
+
+  .offline-meta {
+    font-size: 11px;
   }
 
   /* Getting Started (Steps) Section - Mobile Optimization */
@@ -2856,5 +2989,89 @@ body {
     font-weight: 700;
     white-space: nowrap;
     flex-shrink: 0;
+  }
+
+  /* Audio Player Preview - Mobile Fix */
+  .audio-player-preview {
+    bottom: 16px;
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .player-inner-card {
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  .player-track-info {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .player-cover {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .player-track-title {
+    font-size: 11.5px;
+    max-width: 95px;
+  }
+
+  .player-track-artist {
+    font-size: 10px;
+  }
+
+  .btn-player-fav {
+    padding: 2px;
+  }
+
+  .player-center-controls {
+    gap: 4px;
+    max-width: 120px;
+  }
+
+  .player-buttons-row {
+    gap: 6px;
+  }
+
+  .btn-play-pause-main {
+    width: 28px;
+    height: 28px;
+  }
+
+  .btn-play-pause-main svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .player-btn-ctrl svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .player-btn-tool {
+    padding: 4px;
+  }
+
+  .player-btn-tool svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Toast Notification - Mobile Fix */
+  .toast-notification {
+    top: 14px;
+    right: 14px;
+    left: 14px;
+    margin: 0 auto;
+    padding: 12px 14px;
+    max-width: calc(100% - 28px);
+    box-sizing: border-box;
   }
 }
